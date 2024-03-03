@@ -1,2 +1,2 @@
 # cpp_questions
-Cpp Questions - Leetcode &amp; others.
+Competitive programming Questions - Leetcode &amp; others.
