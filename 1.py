@@ -3,7 +3,16 @@
 # You may assume that each input would have exactly one solution, and you may not use the same element twice.
 # You can return the answer in any order.
 
-
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        numMap = {}
+        for i, n in enumerate(nums):
+            diff = target - n
+            if diff in numMap:
+                return [numMap[diff], i]
+            numMap[n] = i
+        return 
+'''
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         numMap = {}
@@ -16,3 +25,4 @@ class Solution:
             numMap[nums[i]] = i
 
         return []
+'''
