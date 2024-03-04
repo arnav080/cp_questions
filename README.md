@@ -1,2 +1,2 @@
-# cpp_questions
+# cp_questions
 Competitive programming Questions - Leetcode &amp; others.
