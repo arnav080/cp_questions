@@ -12,15 +12,11 @@ Every close bracket has a corresponding open bracket of the same type
 class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
-        closeToOpen = {")":"(", "]":"[", "}":"{"}
+        openToClose = {'(':')', '{':'}', '[':']'}
 
         for c in s:
-            if c in closeToOpen:
-                if stack and stack[-1] == closeToOpen[c]:
-                    stack.pop()
-                else:
-                    return False
-            else:
+            if c in openToClose:
                 stack.append(c)
-
-        return True if not stack else False
+            elif len(stack) == 0 or c != openToClose[stack.pop()]:
+                return False
+        return len(stack) == 0
