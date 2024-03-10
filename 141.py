@@ -17,4 +17,4 @@ class Solution:
                 return True
         return False
 
-# Tortoise and Hare algorithm
+# Floyd's Tortoise and Hare algorithm
