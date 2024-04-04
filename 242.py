@@ -4,16 +4,18 @@
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        count = [0] * 26
 
-        for x in s:
-            count[ord(x) - ord('a')] += 1 
+        if len(s) != len(t):
+            return False
 
-        for x in t:
-            count[ord(x) - ord('a')] -= 1
-
-        for val in count:
-            if val != 0:
+        countS, countT = {}, {}
+        for i in range(len(s)):
+            countS[s[i]] = 1 + countS.get(s[i], 0)
+        for n in range(len(t)):
+            countT[t[n]] = 1 + countT.get(t[n], 0)
+        
+        for c in countS:
+            if countS[c] != countT.get(c, 0):
                 return False
 
         return True
